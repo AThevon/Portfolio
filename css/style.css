@@ -1,3 +1,5 @@
+/* #region */
+
 /* public-sans-300 - latin */
 @font-face {
     font-display: swap;
@@ -376,6 +378,7 @@
     /* Legacy iOS */
 }
 
+/* #endregion */
 
 :root {
     --black: #232323;
@@ -384,13 +387,19 @@
 }
 
 body {
-    /* background-color: var(--black); */
-    background-color: #b28b66;
+    background-color: var(--black);
+    /* background-color: #b28b66; */
     width: 100vw;
     font-family: 'Public Sans', sans-serif;
     font-weight: 400;
     font-size: 2rem;
 }
+h3 {
+    text-transform: uppercase;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 4rem;
+}
+
 
 /* SECTION HEADER */
 
@@ -441,8 +450,8 @@ body {
 button.btn-nav {
     position: absolute;
     right: 0;
-    margin-right: 2.5rem;
-    padding: 1.5rem 4rem;
+    margin-right: 5rem;
+    padding: 1.2rem 3.5rem;
     background-color: var(--beige);
     color: var(--black);
     text-transform: uppercase;
@@ -457,6 +466,7 @@ button.btn-nav {
 /* SECTION HERO */
 
 section.hero {
+    position: relative;
     width: 100vw;
     height: 93vh;
     background-image: url(../img/bg-hero.png);
@@ -465,5 +475,155 @@ section.hero {
     background-size: cover;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.bg-blur {
+    position: absolute;
+    backdrop-filter: blur(2px);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 41.98%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.main-hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 75vw;
+    margin-inline: 23rem 20rem;
+    z-index: 1;
+}
+
+.title-hero {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    line-height: 1;
+}
+
+.title-hero h1 {
+    font-size: 7.2rem;
+    font-weight: 500;
+}
+
+
+.title-hero h1 span {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+    font-size: 10.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0rem;
+}
+
+.title-hero h2 {
+    padding-left: 7.5rem;
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--beige);
+}
+
+/* IMAGE HERO */
+
+.img-hero img {
+    width: 39rem;
+    height: 47.4rem;
+    object-fit: cover;
+}
+
+/* SETTING DES CARDS DU HERO */
+
+.card {
+    position: absolute;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.black-card {
+    background-color: var(--black);
+}
+
+.beige-card {
+    background-color: var(--beige);
+}
+
+.title-hero .card {
+    width: 42rem;
+    height: 55rem;
+}
+
+.title-hero .card.black-card {
+    top: -4rem;
+    left: -2rem;
+    transform: rotate(-15deg);
+}
+
+.title-hero .card.beige-card {
+    top: -4rem;
+    left: 8rem;
+    transform: rotate(10deg);
+}
+
+.img-hero .black-card {
+    width: 39rem;
+    height: 47.4rem;
+    top: -2rem;
+    right: -5rem;
+    transform: rotate(-15deg);
+}
+
+/* SECTION ABOUT */
+
+section.about {
+    height: 100vh;
+    max-width: 154rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.main-about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr;
+    column-gap: 10rem;
+}
+
+
+.main-about h3,
+.main-about p {
+    color: var(--white);
+}
+
+.main-about br {
+    margin-bottom: 3rem;
+}
+
+.main-about p {
+    align-self: end;
+}
+
+
+
+
+picture.img-about {
+    background-image: url(../img/about-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+    width: 60rem;
+    height: 60rem;
+    justify-self: end;
+    grid-column: 2 / 3;
+    grid-row: 1 / span 2;
+    
+}
