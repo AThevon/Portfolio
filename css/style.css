@@ -394,6 +394,7 @@ body {
     font-weight: 400;
     font-size: 2rem;
 }
+
 h3 {
     text-transform: uppercase;
     font-family: 'Alegreya Sans', sans-serif;
@@ -405,7 +406,7 @@ h3 {
 
 .navbar {
     width: 100%;
-    height: 12rem;
+    height: 8rem;
     background-color: var(--black);
     display: flex;
     justify-content: center;
@@ -425,21 +426,21 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .main-title span {
     font-weight: 700;
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--black);
     text-shadow: 3px 0 var(--beige), -3px 0 var(--beige), 0 3px var(--beige), 0 -3px var(--beige), 3px 3px var(--beige), -3px -3px var(--beige), 3px -3px var(--beige), -3px 3px var(--beige);
     line-height: 2;
+    margin-top: -.5rem;
 }
 
 .main-title h2 {
     text-align: center;
     font-weight: 500;
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     color: var(--white);
     padding-inline: 2.2rem;
     padding-bottom: .5rem;
@@ -457,7 +458,7 @@ button.btn-nav {
     text-transform: uppercase;
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
     border: none;
     border-radius: 5rem;
@@ -468,7 +469,7 @@ button.btn-nav {
 section.hero {
     position: relative;
     width: 100vw;
-    height: 93vh;
+    height: 100vh;
     background-image: url(../img/bg-hero.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -482,8 +483,8 @@ section.hero {
 
 .bg-blur {
     position: absolute;
-    backdrop-filter: blur(2px);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 41.98%, rgba(0, 0, 0, 0) 100%);
+    /* backdrop-filter: blur(1px); */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 100%);
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -508,7 +509,7 @@ section.hero {
 }
 
 .title-hero h1 {
-    font-size: 7.2rem;
+    font-size: 4rem;
     font-weight: 500;
 }
 
@@ -516,14 +517,14 @@ section.hero {
 .title-hero h1 span {
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: 700;
-    font-size: 10.5rem;
+    font-size: 8rem;
     text-transform: uppercase;
     letter-spacing: 0rem;
 }
 
 .title-hero h2 {
-    padding-left: 7.5rem;
-    font-size: 3.6rem;
+    padding-left: 6rem;
+    font-size: 2.6rem;
     font-weight: 500;
     font-style: italic;
     text-transform: uppercase;
@@ -533,8 +534,7 @@ section.hero {
 /* IMAGE HERO */
 
 .img-hero img {
-    width: 39rem;
-    height: 47.4rem;
+    width: 32rem;
     object-fit: cover;
 }
 
@@ -555,13 +555,13 @@ section.hero {
 }
 
 .title-hero .card {
-    width: 42rem;
-    height: 55rem;
+    width: 32rem;
+    height: 45rem;
 }
 
 .title-hero .card.black-card {
     top: -4rem;
-    left: -2rem;
+    left: -1.5rem;
     transform: rotate(-15deg);
 }
 
@@ -572,8 +572,8 @@ section.hero {
 }
 
 .img-hero .black-card {
-    width: 39rem;
-    height: 47.4rem;
+    width: 32rem;
+    height: 40rem;
     top: -2rem;
     right: -5rem;
     transform: rotate(-15deg);
@@ -582,7 +582,7 @@ section.hero {
 /* SECTION ABOUT */
 
 section.about {
-    height: 100vh;
+    /* height: 100vh; */
     max-width: 154rem;
     display: flex;
     justify-content: center;
@@ -591,9 +591,11 @@ section.about {
 }
 
 .main-about {
+    margin: 15rem;
+    /* margin-inline: 10rem; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 17rem 33rem;
     column-gap: 10rem;
 }
 
@@ -608,22 +610,20 @@ section.about {
 }
 
 .main-about p {
+    font-size: 1.6rem;
     align-self: end;
 }
 
-
-
-
-picture.img-about {
-    background-image: url(../img/about-img.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 50px;
-    width: 60rem;
-    height: 60rem;
+.main-about picture {
     justify-self: end;
+    align-self: center;
     grid-column: 2 / 3;
     grid-row: 1 / span 2;
-    
+}
+
+picture .img-about {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5rem;
 }

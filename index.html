@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/helpers.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -47,17 +47,17 @@
 
     <section class="about">
         <div class="main-about">
-                <h3>qui suis-je ?</h3>
-                <p>Bonjour, je m'appelle Adrien, et j'adore ce que je fais ! <br>
-                    En effet, j'ai toujours été captivé par l'informatique dans sa globalité depuis mon plus jeune âge. <br>
-                    Après une reconversion dans le milieu du développement web et de la programmation, mon nouveau
-                    métier est désormais l'union parfaite entre deux de mes passions : l'électronique, et résoudre les
-                    casse-têtes. <br>
-                    Développement d'interface en front-end, gestion de base de données et interactions web en back-end,
-                    ainsi que de multiples tâches aussi variées les unes que les autres, j'aime la connaissance que
-                    m'apporte le domaine de l'internet, et je suis prêt à relevé tout les défis qui se présenteront à
-                    moi.</p>
-            <picture class="img-about"></picture>
+            <h3>qui suis-je ?</h3>
+            <p>Bonjour, je m'appelle Adrien, et j'adore ce que je fais ! <br>
+                En effet, j'ai toujours été captivé par l'informatique dans sa globalité depuis mon plus jeune âge. <br>
+                Après une reconversion dans le milieu du développement web et de la programmation, mon nouveau
+                métier est désormais l'union parfaite entre deux de mes passions : l'électronique, et résoudre les
+                casse-têtes. <br>
+                Développement d'interface en front-end, gestion de base de données et interactions web en back-end,
+                ainsi que de multiples tâches aussi variées les unes que les autres, j'aime la connaissance que
+                m'apporte le domaine de l'internet, et je suis prêt à relevé tout les défis qui se présenteront à
+                moi.</p>
+            <picture data-aos="flip-left" data-aos-duration="2000" data-aos-anchor-placement="center-bottom" ><img class="img-about" src="img/about-img.png" alt="Developer Desk"></picture>
         </div>
     </section>
 
@@ -191,7 +191,10 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="js/script.js"></script>
 </body>
 
