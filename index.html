@@ -47,32 +47,38 @@
 
     <section class="about">
         <div class="main-about">
-            <h3>qui suis-je ?</h3>
-            <p>Bonjour, je m'appelle Adrien, et j'adore ce que je fais ! <br>
-                En effet, j'ai toujours été captivé par l'informatique dans sa globalité depuis mon plus jeune âge. <br>
-                Après une reconversion dans le milieu du développement web et de la programmation, mon nouveau
-                métier est désormais l'union parfaite entre deux de mes passions : l'électronique, et résoudre les
-                casse-têtes. <br>
-                Développement d'interface en front-end, gestion de base de données et interactions web en back-end,
-                ainsi que de multiples tâches aussi variées les unes que les autres, j'aime la connaissance que
-                m'apporte le domaine de l'internet, et je suis prêt à relevé tout les défis qui se présenteront à
-                moi.</p>
-            <picture data-aos="flip-left" data-aos-duration="2000" data-aos-anchor-placement="center-bottom" ><img class="img-about" src="img/about-img.png" alt="Developer Desk"></picture>
+            <div class="text-about">
+                <h3>qui suis-je ?</h3>
+                <p>Bonjour, je
+                    m'appelle Adrien, et j'adore ce que je fais ! <br>
+                    En effet, j'ai toujours été captivé par l'informatique dans sa globalité depuis mon plus jeune âge.
+                    <br>
+                    Après une reconversion dans le milieu du développement web et de la programmation, mon nouveau
+                    métier est désormais l'union parfaite entre deux de mes passions : l'électronique, et résoudre les
+                    casse-têtes. <br>
+                    Développement d'interface en front-end, gestion de base de données et interactions web en back-end,
+                    ainsi que de multiples tâches aussi variées les unes que les autres, j'aime la connaissance que
+                    m'apporte le domaine de l'internet, et je suis prêt à relevé tout les défis qui se présenteront à
+                    moi.
+                </p>
+            </div>
+            <picture>
+                <img class="img-about" src="img/about-img.png" alt="Developer Desk">
+            </picture>
         </div>
     </section>
 
     <section class="exp">
+        <div class="bg-blur"></div>
         <div class="main-exp">
-            <div class="bg-title">
-                <h3>expériences</h3>
-            </div>
+            <h3 class="bg-title">expériences</h3>
             <ul class="main-card-exp">
                 <li class="card-exp">
                     <figure class="logo-fcc"></figure>
                     <h4 class="title-card-exp">freeCodeCamp.org</h4>
                     <p class="date-exp">2021 - 2022</p>
-                    <p>Autoformation au développement et langages de programmation :</p>
-                    <ul>
+                    <p class="desc-exp">Autoformation au développement et langages de programmation :</p>
+                    <ul class="desc-exp">
                         <li>HTML 5</li>
                         <li>CSS 3</li>
                         <li>Introduction au JavaScript</li>
@@ -82,8 +88,8 @@
                     <figure class="logo-cefim"></figure>
                     <h4 class="title-card-exp">CEFIM</h4>
                     <p class="date-exp">2022 - 2023</p>
-                    <p>Formation Développeur Web et Web Mobile fullstack JavaScript :</p>
-                    <ul>
+                    <p class="coucou">Formation Développeur Web et Web Mobile fullstack JavaScript :</p>
+                    <ul class="desc-exp">
                         <li>HTML/CSS/JavaScript</li>
                         <li>React.js</li>
                         <li>Node.js</li>
@@ -95,18 +101,16 @@
                     <figure class="logo-react"></figure>
                     <h4 class="title-card-exp">Projet CEFIM</h4>
                     <p class="date-exp">2023</p>
-                    <p>Préparation d’un projet qui sera réalisé en React, dans le cadre de la formation Développeur Web
+                    <p class="desc-exp">Préparation d’un projet qui sera réalisé en React, dans le cadre de la formation Développeur Web
                         au CEFIM</p>
                 </li>
             </ul>
-            <a href="#" class="btn-cv">CV</a>
+            <a href="https://drive.google.com/file/d/1sOEWBaf1HsbRyZ6w3NAPfL_dTTq1A2ly/view?usp=sharing" class="btn-cv" target="_blank">CV</a>
         </div>
     </section>
 
     <section class="langages">
-        <div class="bg-title">
-            <h3>langages informatiques</h3>
-        </div>
+        <h3 class="bg-title">langages informatiques</h3>
         <ul class="col-icons-1">
             <li class="icon-lang">
                 <figure class="icon-html"></figure>
@@ -144,9 +148,7 @@
     </section>
 
     <section class="hobbies">
-        <div class="bg-title">
-            <h3>hobbies</h3>
-        </div>
+        <h3 class="bg-title">hobbies</h3>
         <div class="main-panel">
             <div class="panel panel-guitare">
                 <p>guitare électrique</p>
@@ -191,10 +193,21 @@
             </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+
+    <!-- ALL SCRIPTS NEEDED -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/EaselPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/PixiPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/CustomEase.min.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 

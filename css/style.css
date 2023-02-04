@@ -401,6 +401,10 @@ h3 {
     font-size: 4rem;
 }
 
+section * {
+    z-index: 2;
+}
+
 
 /* SECTION HEADER */
 
@@ -469,7 +473,7 @@ button.btn-nav {
 section.hero {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     background-image: url(../img/bg-hero.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -483,7 +487,7 @@ section.hero {
 
 .bg-blur {
     position: absolute;
-    /* backdrop-filter: blur(1px); */
+    backdrop-filter: blur(2px);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 100%);
     width: 100%;
     height: 100%;
@@ -496,9 +500,8 @@ section.hero {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 75vw;
+    max-width: 60vw;
     margin-inline: 23rem 20rem;
-    z-index: 1;
 }
 
 .title-hero {
@@ -560,8 +563,8 @@ section.hero {
 }
 
 .title-hero .card.black-card {
-    top: -4rem;
-    left: -1.5rem;
+    top: -2rem;
+    left: -1rem;
     transform: rotate(-15deg);
 }
 
@@ -582,48 +585,159 @@ section.hero {
 /* SECTION ABOUT */
 
 section.about {
-    /* height: 100vh; */
+    height: 80vh;
     max-width: 154rem;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
 .main-about {
-    margin: 15rem;
-    /* margin-inline: 10rem; */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 17rem 33rem;
-    column-gap: 10rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
+.text-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50rem;
+}
 
-.main-about h3,
-.main-about p {
+.text-about h3,
+.text-about p {
     color: var(--white);
 }
 
-.main-about br {
-    margin-bottom: 3rem;
+.text-about h3 {
+    font-size: 3.2rem;
+    /* text-align: center; */
 }
 
-.main-about p {
+.text-about br {
+    margin-bottom: 2rem;
+}
+
+.text-about p {
     font-size: 1.6rem;
-    align-self: end;
+
 }
 
-.main-about picture {
-    justify-self: end;
-    align-self: center;
-    grid-column: 2 / 3;
-    grid-row: 1 / span 2;
-}
-
-picture .img-about {
-    width: 100%;
-    height: 100%;
+picture img.img-about {
+    width: 50rem;
     object-fit: cover;
-    border-radius: 5rem;
+    border-radius: 30px;
 }
+
+
+/* SECTION EXPERIENCES */
+
+section.exp {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/bg-2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-exp {
+    display: grid;
+    color: var(--white);
+    width: 140rem;
+}
+
+.bg-title {
+    padding: 1.2rem 6rem;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
+    text-align: center;
+    place-self: center;
+    margin-bottom: 10rem;
+}
+
+ul.main-card-exp {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul li.card-exp {
+    background-color: var(--beige);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 36rem;
+    padding: 4rem;
+}
+
+li.card-exp p,
+li.card-exp ul {
+    font-size: 1.6rem;
+}
+
+li.card-exp ul {
+    list-style: disc;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+.desc-exp {
+    margin-block: auto;
+}
+
+.coucou {
+    margin-block: 2rem;
+}
+
+li.card-exp figure,
+li.card-exp h4,
+li.card-exp p.date-exp {
+    align-self: center;
+}
+
+
+li.card-exp figure {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+
+li.card-exp figure.logo-fcc {
+    background-image: url(../img/freecodecamp-icon.svg);
+}
+li.card-exp figure.logo-cefim {
+    background-image: url(../img/cefim-ico.svg);
+}
+li.card-exp figure.logo-react {
+    background-image: url(../img/react-icon.svg);
+}
+
+
+a.btn-cv {
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 50px;
+    background-color: var(--black);
+    padding: 2rem 7rem;
+    place-self: center;
+    margin-top: 8rem;
+    font-weight: 700;
+}
+
+
