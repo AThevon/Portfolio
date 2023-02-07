@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/helpers.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,12 +18,23 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="main-title">
-                <span class="left-bracket">{</span>
-                <div class="title">
-                    <h2>.portfolio</h2>
+
+
+            <div class="container-title">
+                <div class="main-title">
+                    <span class="left-bracket">{</span>
+                    <div class="title">
+                        <h2 class="title-h2">adrien.thevon</h2>
+                    </div>
+                    <span class="right-bracket">}</span>
                 </div>
-                <span class="right-bracket">}</span>
+            </div>
+            <div class="container-landing">
+                <div id="moving-card" class="landing-card beige-card">
+                    <img src="img/Circle-icons-dev.svg" alt="Logo Dev Bracket"
+                        class="logo-dev logo-dev-main logo-dev-hover">
+                    <img src="img/Circle-icons-dev.svg" alt="Logo Dev Bracket" class="logo-dev logo-dev-bg">
+                </div>
             </div>
             <button class="btn-nav">me contacter</button>
         </div>
@@ -39,8 +51,8 @@
             <div class="title-hero">
                 <div class="card beige-card card-1"></div>
                 <div class="card black-card card-2"></div>
-                <h1>Adrien<br><span>THEVON</span></h1>
-                <h2>développeur web</h2>
+                <h1 class="first-name">Adrien<br><span class="last-name">THEVON</span></h1>
+                <h2 class="job">développeur web</h2>
             </div>
             <div class="img-hero">
                 <img src="img/img-hero.jpg" alt="Photo de Profil" class="profil-picture">
@@ -117,43 +129,71 @@
 
     <section class="langages">
         <h3 class="bg-title">langages informatiques</h3>
-        <ul class="col-icons-1">
-            <li class="icon-lang">
-                <figure class="icon-html"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-css"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-js"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-react"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-vue"></figure>
-            </li>
-        </ul>
-        <ul class="col-icons-2">
-            <li class="icon-lang">
-                <figure class="icon-sql"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-node"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-wordpress"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-php"></figure>
-            </li>
-            <li class="icon-lang">
-                <figure class="icon-symfony"></figure>
-            </li>
-        </ul>
+        <div class="swiper my-swiper lang-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide lang-card card-html">
+                    <img src="img/HTML5 icon.svg" alt="HTML">
+                    <div class="lang-card-text">
+                        <h4>HTML 5</h4>
+                        <div class="half-arc half-arc-html" style="--percentage:90%;">
+                            <span class="label">9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide lang-card card-css">
+                    <img src="img/css3 icon.svg" alt="CSS">
+                    <div class="lang-card-text">
+                        <h4>CSS 3</h4>
+                        <div class="half-arc half-arc-css" style="--percentage:80%;">
+                            <span class="label">8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide lang-card card-js">
+                    <img src="img/javascript icon.svg" alt="JavaScript">
+                    <div class="lang-card-text">
+                        <h4>JavaScript</h4>
+                        <div class="half-arc half-arc-js" style="--percentage:70%;">
+                            <span class="label">7</span>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="swiper-slide lang-card card-react">
+                    <img src="img/react-icon.svg" alt="React">
+                    <div class="lang-card-text">
+                        <h4>React</h4>
+                        <div class="half-arc half-arc-react" style="--percentage:20%;">
+                            <span class="label">2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide lang-card card-sql">
+                    <img src="img/sql-5.svg" alt="SQL">
+                    <div class="lang-card-text">
+                        <h4>SQL</h4>
+                        <div class="half-arc half-arc-sql" style="--percentage:10%;">
+                            <span class="label">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide lang-card card-node">
+                    <img src="img/node icon.svg" alt="Node">
+                    <div class="lang-card-text">
+                        <h4>Node.js</h4>
+                        <div class="half-arc half-arc-node" style="--percentage:10%;">
+                            <span class="label">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide lang-card last-card">
+                    <p class="coming-soon">More coming soon..</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="hobbies">
+    <!-- <section class="hobbies">
         <h3 class="bg-title">hobbies</h3>
         <div class="main-panel">
             <div class="panel panel-guitare">
@@ -198,7 +238,7 @@
                 <figure class="logo-linkedin"></figure>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <!-- ALL SCRIPTS NEEDED -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -213,6 +253,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/EasePack.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/CustomEase.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <script src="js/script.js"></script>
 </body>
