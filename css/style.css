@@ -393,6 +393,8 @@ body {
     font-family: 'Public Sans', sans-serif;
     font-weight: 400;
     font-size: 2rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 h3 {
@@ -402,7 +404,7 @@ h3 {
 }
 
 section * {
-    z-index: 2;
+    z-index: 3;
 }
 
 
@@ -420,6 +422,7 @@ section * {
 .main-title {
     display: flex;
     align-items: center;
+    cursor: default;
 }
 
 .title {
@@ -430,6 +433,26 @@ section * {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 20rem
+}
+
+.main-title:hover .title{
+    animation: 'reduce' 1s forwards;
+}
+
+@keyframes reduce {
+    0% {
+        width: 20rem;
+    }
+    30% {
+        width: 20rem;
+    }
+    60% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+    }
 }
 
 .main-title span {
@@ -441,6 +464,44 @@ section * {
     margin-top: -.5rem;
 }
 
+.main-title:hover .left-bracket {
+    animation: 'bounce-left' 1s;
+}
+
+@keyframes bounce-left {
+    0% {
+        transform: translateX(0rem);
+    }
+    25% {
+        transform: translateX(-2rem);
+    }
+    50% {
+        transform: translateX(0rem);
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+}
+.main-title:hover .right-bracket {
+    animation: 'bounce-right' 1s;
+}
+
+@keyframes bounce-right {
+    0% {
+        transform: translateX(0rem);
+    }
+    25% {
+        transform: translateX(2rem);
+    }
+    50% {
+        transform: translateX(0rem);
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+
 .main-title h2 {
     text-align: center;
     font-weight: 500;
@@ -449,8 +510,12 @@ section * {
     padding-inline: 2.2rem;
     padding-bottom: .5rem;
     line-height: 1.6;
+    transition: .8s;
 }
 
+.main-title:hover h2 {
+    color: transparent;
+}
 
 button.btn-nav {
     position: absolute;
@@ -466,6 +531,17 @@ button.btn-nav {
     text-align: center;
     border: none;
     border-radius: 5rem;
+    
+}
+
+button.btn-nav:hover {
+    animation: rubberBand;
+    animation-duration: 1.2s; 
+}
+
+.btn-out {
+    animation: bounceOutUp;
+    animation-duration: 1.4s; 
 }
 
 /* SECTION HERO */
@@ -483,6 +559,7 @@ section.hero {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .bg-blur {
@@ -514,6 +591,7 @@ section.hero {
 .title-hero h1 {
     font-size: 4rem;
     font-weight: 500;
+    animation: 'fade-in' 2.2s ease-out forwards;
 }
 
 
@@ -523,6 +601,7 @@ section.hero {
     font-size: 8rem;
     text-transform: uppercase;
     letter-spacing: 0rem;
+    animation: 'fade-in' 2.3s ease-out forwards;
 }
 
 .title-hero h2 {
@@ -532,13 +611,46 @@ section.hero {
     font-style: italic;
     text-transform: uppercase;
     color: var(--beige);
+    animation: 'fade-in' 3s ease-out;
 }
 
-/* IMAGE HERO */
 
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* IMAGE HERO */
+.img-hero {
+    display: flex;
+    z-index: 10;
+}
 .img-hero img {
     width: 32rem;
     object-fit: cover;
+    animation: 'slide-right-2' 1.4s ease-out forwards;
+}
+
+@keyframes slide-right-2 {
+    0%{
+        transform: translateX(1000px);
+    }
+    
+    80%{
+        transform: translateX(-20px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
 }
 
 /* SETTING DES CARDS DU HERO */
@@ -546,7 +658,7 @@ section.hero {
 .card {
     position: absolute;
     border-radius: 10px;
-    z-index: -1;
+    z-index: 2;
 }
 
 .black-card {
@@ -581,6 +693,76 @@ section.hero {
     right: -5rem;
     transform: rotate(-15deg);
 }
+
+.card-2 {
+    animation: 'slide-left' 1.4s ease-out forwards;
+}
+
+@keyframes slide-left {
+    0%{
+        transform: translateX(-1000px) translateY(1000px) rotate(-305deg);
+    }
+    100%{
+        transform: translateX(0) translateY(0) rotate(-15deg);
+    }
+}
+
+
+.card-1 {
+    animation: 'slide-left-2' 1.2s ease-out forwards;
+}
+
+@keyframes slide-left-2 {
+    0%{
+        transform: translateX(-800px) translateY(800px) rotate(-190deg);
+    }
+    100%{
+        transform: translateX(0) translateY(0) rotate(10deg);
+    }
+}
+
+
+.card-3 {
+    animation: 'slide-right' 2s ease-out forwards
+}
+@keyframes slide-right {
+    0%{
+        transform: translateX(800px) translateY(-200px) rotate(-345deg);
+    }
+    20%{
+        transform: translateX(800px) translateY(-200px) rotate(-345deg);
+    }
+    100%{
+        transform: translateX(0) translateY(0) rotate(-15deg);
+    }
+}
+
+.card-out {
+    width: 30rem;
+    height: 45rem;
+    position: absolute;
+    z-index: 3;
+}
+
+.card-out-1,
+.card-out-3 {
+    margin-left: -150%;
+}
+
+.card-out-2 {
+    margin-bottom: -150%;
+}
+
+
+.card-out-4 {
+    margin-top: -115%
+}
+
+
+.card-out-5 {
+    margin-right: -150%;
+}
+
 
 /* SECTION ABOUT */
 
@@ -683,6 +865,7 @@ ul li.card-exp {
     padding: 4rem;
 }
 
+
 li.card-exp p,
 li.card-exp ul {
     font-size: 1.6rem;
@@ -698,7 +881,7 @@ li.card-exp ul {
     margin-block: auto;
 }
 
-.coucou {
+.desc-cefim {
     margin-block: 2rem;
 }
 
@@ -707,7 +890,6 @@ li.card-exp h4,
 li.card-exp p.date-exp {
     align-self: center;
 }
-
 
 li.card-exp figure {
     background-repeat: no-repeat;
@@ -728,16 +910,66 @@ li.card-exp figure.logo-react {
     background-image: url(../img/react-icon.svg);
 }
 
+.card-fcc {
+    margin-left: -150%;
+}
 
 a.btn-cv {
     text-decoration: none;
     color: var(--white);
     border-radius: 50px;
-    background-color: var(--black);
+    background-color: var(--beige);
     padding: 2rem 7rem;
     place-self: center;
-    margin-top: 8rem;
+    margin-top: 10rem;
     font-weight: 700;
+    border: 3px solid var(--black);
+    background-image: -webkit-linear-gradient(30deg, var(--black) 50%, transparent 50%);
+    background-image: linear-gradient(30deg, var(--black) 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+    transition: .3s;
+}
+a.btn-cv:hover {
+    background-position: 100%;
+    color: var(--black);
+    scale: 1.05;
+    -webkit-box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.4); 
+box-shadow: 5px 5px 15px 3px rgba(0,0,0,0.4);
 }
 
-
+#anim-card-1 {
+    animation: wobble;
+    animation-duration: 2s;
+}
+#anim-card-2 {
+    animation: swing;
+    animation-duration: 2s;
+}
+#anim-card-3 {
+    animation: tada;
+    animation-duration: 2s;
+}
+#anim-card-4 {
+    animation: jello;
+    animation-duration: 2s;
+}
+#anim-card-5 {
+    animation: shakeY;
+    animation-duration: 2s;
+}
+#anim-card-6 {
+    animation: bounce;
+    animation-duration: 2s;
+}
+#anim-card-7 {
+    animation: rubberBand;
+    animation-duration: 2s;
+}
+#anim-card-8 {
+    animation: heartBeat;
+    animation-duration: 2s;
+}

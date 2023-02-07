@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/helpers.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,11 +18,11 @@
     <header>
         <div class="navbar">
             <div class="main-title">
-                <span>{</span>
+                <span class="left-bracket">{</span>
                 <div class="title">
                     <h2>.portfolio</h2>
                 </div>
-                <span>}</span>
+                <span class="right-bracket">}</span>
             </div>
             <button class="btn-nav">me contacter</button>
         </div>
@@ -31,16 +30,21 @@
 
     <section class="hero">
         <div class="bg-blur"></div>
+        <div class="card-out card-out-1 card beige-card"></div>
+        <div class="card-out card-out-2 card beige-card"></div>
+        <div class="card-out card-out-3 card black-card"></div>
+        <div class="card-out card-out-4 card black-card"></div>
+        <div class="card-out card-out-5 card black-card"></div>
         <div class="main-hero">
             <div class="title-hero">
-                <div class="card beige-card"></div>
-                <div class="card black-card"></div>
+                <div class="card beige-card card-1"></div>
+                <div class="card black-card card-2"></div>
                 <h1>Adrien<br><span>THEVON</span></h1>
                 <h2>développeur web</h2>
             </div>
             <div class="img-hero">
-                <img src="img/img-hero.jpg" alt="Photo de Profil">
-                <div class="card black-card"></div>
+                <img src="img/img-hero.jpg" alt="Photo de Profil" class="profil-picture">
+                <div class="card black-card card-3"></div>
             </div>
         </div>
     </section>
@@ -62,7 +66,7 @@
                     moi.
                 </p>
             </div>
-            <picture>
+            <picture class="main-img-about">
                 <img class="img-about" src="img/about-img.png" alt="Developer Desk">
             </picture>
         </div>
@@ -73,7 +77,7 @@
         <div class="main-exp">
             <h3 class="bg-title">expériences</h3>
             <ul class="main-card-exp">
-                <li class="card-exp">
+                <li class="card-exp " id="card-fcc">
                     <figure class="logo-fcc"></figure>
                     <h4 class="title-card-exp">freeCodeCamp.org</h4>
                     <p class="date-exp">2021 - 2022</p>
@@ -84,11 +88,11 @@
                         <li>Introduction au JavaScript</li>
                     </ul>
                 </li>
-                <li class="card-exp">
+                <li class="card-exp" id="card-cefim">
                     <figure class="logo-cefim"></figure>
                     <h4 class="title-card-exp">CEFIM</h4>
                     <p class="date-exp">2022 - 2023</p>
-                    <p class="coucou">Formation Développeur Web et Web Mobile fullstack JavaScript :</p>
+                    <p class="desc-cefim">Formation Développeur Web et Web Mobile fullstack JavaScript :</p>
                     <ul class="desc-exp">
                         <li>HTML/CSS/JavaScript</li>
                         <li>React.js</li>
@@ -97,15 +101,17 @@
                         <li>Wordpress</li>
                     </ul>
                 </li>
-                <li class="card-exp">
+                <li class="card-exp" id="card-react">
                     <figure class="logo-react"></figure>
                     <h4 class="title-card-exp">Projet CEFIM</h4>
                     <p class="date-exp">2023</p>
-                    <p class="desc-exp">Préparation d’un projet qui sera réalisé en React, dans le cadre de la formation Développeur Web
+                    <p class="desc-exp">Préparation d’un projet qui sera réalisé en React, dans le cadre de la formation
+                        Développeur Web
                         au CEFIM</p>
                 </li>
             </ul>
-            <a href="https://drive.google.com/file/d/1sOEWBaf1HsbRyZ6w3NAPfL_dTTq1A2ly/view?usp=sharing" class="btn-cv" target="_blank">CV</a>
+            <a href="https://drive.google.com/file/d/1sOEWBaf1HsbRyZ6w3NAPfL_dTTq1A2ly/view?usp=sharing" class="btn-cv"
+                target="_blank">CV</a>
         </div>
     </section>
 
