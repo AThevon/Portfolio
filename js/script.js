@@ -1,4 +1,16 @@
-// SETTING DU LANDING 
+//* SETTING DU LANDING 
+
+// Responsive header
+const myH2 = document.querySelector('.title-h2');
+
+function settingH2() {
+    const windowWidth = window.innerWidth;
+    myH2.textContent = windowWidth < 1025 ? '.portfolio' : 'adrien.thevon';
+    document.body.style.overflow = windowWidth < 1025 ? 'auto' : 'hidden';
+}
+
+window.addEventListener('resize', settingH2);
+settingH2();
 
 // effet 3d de la card
 function handleMouseMove(event) {
@@ -21,8 +33,6 @@ const logoDevBg = document.querySelector('.logo-dev-bg');
 
 const navBar = document.querySelector('.navbar');
 const movingCard = document.querySelector('.landing-card')
-
-document.body.style['overflow'] = 'hidden';
 
 logoDev.addEventListener('click', function () {
     document.onmousemove = '';
@@ -89,9 +99,9 @@ logoDev.addEventListener('click', function () {
 })
 
 
-// #region CARDS HERO
+//! #region CARDS HERO
 
-gsap.to(".card-out-1", {
+gsap.from(".card-out", {
     scrollTrigger: {
         trigger: '.hero',
         start: "top bottom",
@@ -100,95 +110,11 @@ gsap.to(".card-out-1", {
     },
     rotation: 360,
     duration: 1,
-    x: 1600,
-    y: -100,
-});
-gsap.to(".card-out-2", {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: "top bottom",
-        toggleActions: "restart pause reverse pause",
-        scrub: 1,
-    },
-    rotation: 270,
-    duration: 3,
-    x: 800,
-    y: -1200,
-});
-gsap.to(".card-out-3", {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: "top bottom",
-        toggleActions: "restart pause reverse pause",
-        scrub: 1,
-    },
-    rotation: 180,
-    duration: 10,
-    x: 1200,
-    y: 800,
-});
-gsap.to(".card-out-4", {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: "top bottom",
-        end: "500px",
-        toggleActions: "restart pause reverse pause",
-        scrub: 1,
-    },
-    rotation: 300,
-    duration: 10,
-    x: -200,
-    y: 1400,
-});
-gsap.to(".card-out-5", {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: "top bottom",
-        toggleActions: "restart pause reverse pause",
-        scrub: 1,
-    },
-    rotation: 400,
-    duration: 10,
-    x: -800,
-    y: 300,
-});
-gsap.from("#card-fcc", {
-    scrollTrigger: {
-        trigger: '.about',
-        start: "top bottom",
-        end: "center center",
-        toggleActions: "restart pause reverse pause",
-        scrub: true,
-    },
-    duration: 10,
-    x: "-100rem",
-    scale: .8
-});
-gsap.from("#card-cefim", {
-    scrollTrigger: {
-        trigger: '.about',
-        start: "top bottom",
-        end: "center center",
-        toggleActions: "restart pause reverse pause",
-        scrub: true,
-    },
-    duration: 10,
-    scale: .8
-});
-gsap.from("#card-react", {
-    scrollTrigger: {
-        trigger: '.about',
-        start: "top bottom",
-        end: "center center",
-        toggleActions: "restart pause reverse pause",
-        scrub: true,
-    },
-    duration: 10,
-    x: "100rem",
-    scale: .8
+    x: 2000,
+    y: -500,
 });
 
-// #endregion
+//! #endregion
 
 // ANIMATION ALEATOIRE DES CARDS ON CLICK
 
@@ -209,7 +135,7 @@ function randomAnim() {
 }
 
 
-// SWIPERS.JS 
+//! SWIPERS.JS 
 
 
 const swiper = new Swiper('.my-swiper', {
