@@ -3,14 +3,16 @@
 // Responsive header
 const myH2 = document.querySelector('.title-h2');
 
-function settingH2() {
-    const windowWidth = window.innerWidth;
-    myH2.textContent = windowWidth < 1025 ? '.portfolio' : 'adrien.thevon';
-    document.body.style.overflow = windowWidth < 1025 ? 'auto' : 'hidden';
-}
-
-window.addEventListener('resize', settingH2);
-settingH2();
+window.addEventListener('resize', () => {
+    if (navBar.offsetHeight != window.innerHeight) {
+        document.body.style.overflow = 'auto';
+        myH2.textContent = '.portfolio';
+    }
+    else {
+        document.body.style.overflow = 'hidden';
+        myH2.textContent = 'adrien.thevon'
+    }
+});
 
 // effet 3d de la card
 function handleMouseMove(event) {
@@ -46,27 +48,23 @@ logoDev.addEventListener('click', function () {
     // Mise en place de timers
     var delay1 = 1000;
     setTimeout(function () {
-        //your code to be executed after delay
-
-        movingCard.style['height'] = "0";
-        movingCard.style['width'] = "0";
-        navBar.style['gap'] = '0';
-        logoDev.style['height'] = "0";
-        logoDev.style['width'] = "0";
-        logoDevBg.style['height'] = "0";
-        logoDevBg.style['width'] = "0";
+        movingCard.style.height = "0";
+        movingCard.style.width = "0";
+        navBar.style.gap = "0";
+        logoDev.style.height = "0";
+        logoDev.style.width = "0";
+        logoDevBg.style.height = "0";
+        logoDevBg.style.width = "0";
     }, delay1);
 
     var delay2 = 1500;
     setTimeout(function () {
-        //your code to be executed after delay
         navBar.style['height'] = "8rem";
         document.body.style['overflow-y'] = 'auto';
     }, delay2);
 
     var delay3 = 2200;
     setTimeout(function () {
-        //your code to be executed after delay
         document.querySelector('.card-1').setAttribute('id', 'card-1')
         document.querySelector('.card-2').setAttribute('id', 'card-2')
         document.querySelector('.card-3').setAttribute('id', 'card-3')
@@ -78,7 +76,6 @@ logoDev.addEventListener('click', function () {
 
     var delay4 = 3000;
     setTimeout(function () {
-        //your code to be executed after delay
         document.querySelector('.title').classList.add('title-anim');
         document.querySelector('.left-bracket').classList.add('left-bracket-anim');
         document.querySelector('.right-bracket').classList.add('right-bracket-anim');
@@ -86,13 +83,11 @@ logoDev.addEventListener('click', function () {
 
     var delay5 = 3800;
     setTimeout(function () {
-        //your code to be executed after delay
         document.querySelector('.title-h2').textContent = '.portfolio';
     }, delay5);
 
     var delay6 = 5000;
     setTimeout(function () {
-        //your code to be executed after delay
         document.querySelector('.btn-nav').style['opacity'] = '1';
     }, delay6);
 
@@ -101,17 +96,17 @@ logoDev.addEventListener('click', function () {
 
 //! #region CARDS HERO
 
-gsap.from(".card-out", {
+gsap.to(".card-out", {
     scrollTrigger: {
         trigger: '.hero',
         start: "top bottom",
         toggleActions: "restart pause reverse pause",
         scrub: 1,
     },
-    rotation: 360,
+    rotation: 0,
     duration: 1,
-    x: 2000,
-    y: -500,
+    x: -2000,
+    y: 600,
 });
 
 //! #endregion
