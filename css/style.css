@@ -384,7 +384,6 @@
     --black: #232323;
     --white: #F9F9F9;
     --beige: #BBB6B0;
-
 }
 
 
@@ -395,6 +394,8 @@ body {
     font-weight: 400;
     font-size: 2rem;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 h3 {
@@ -1275,6 +1276,7 @@ ul li.card-exp {
     width: 36rem;
     padding: 4rem;
     cursor: pointer;
+    transform-style: preserve-3d;
 }
 
 
@@ -1310,7 +1312,9 @@ li.card-exp figure {
     width: 10rem;
     height: 10rem;
     margin-bottom: 2rem;
+    transition: .3s;
 }
+
 
 li.card-exp figure.logo-fcc {
     background-image: url(../img/freecodecamp-icon.svg);
@@ -1327,6 +1331,65 @@ li.card-exp figure.logo-react {
 .card-fcc {
     margin-left: -150%;
 }
+
+li.card-exp figure {
+    transform: translateZ(110px);
+}
+
+li.card-exp h4 {
+    transform: translateZ(130px);
+}
+
+li.card-exp p.date-exp {
+    transform: translateZ(50px);
+}
+
+li.card-exp p.desc-exp {
+    transform: translateZ(90px);
+}
+
+li.card-exp ul {
+    transform: translateZ(70px);
+}
+
+.figure-onclick {
+    -webkit-animation: 'flip-n-zoom' .4s linear forwards;
+    animation: 'flip-n-zoom' .4s linear forwards;
+}
+
+@-webkit-keyframes flip-n-zoom {
+    0% {
+        -webkit-transform: translateZ(110px) scale(1) rotate3d(1, 1, 0, 0deg) ;
+        transform: translateZ(110px) scale(1) rotate3d(1, 1, 0, 0deg) ;
+    }
+
+    50% {
+        -webkit-transform: translateZ(150px) scale(2.5) rotate3d(1, 1, 1, 180deg) ;
+        transform: translateZ(150px) scale(1.7) rotate3d(1, 1, 1, 180deg) ;
+    }
+
+    100% {
+        -webkit-transform: translateZ(110px) scale(1) rotate3d(1, 1, 1, 360deg) ;
+        transform: translateZ(110px) scale(1) rotate3d(1, 1, 1, 360deg) ;
+    }
+}
+@keyframes flip-n-zoom {
+    0% {
+        -webkit-transform: translateZ(110px) scale(1) rotate3d(1, 1, 0, 0deg) ;
+        transform: translateZ(110px) scale(1) rotate3d(1, 1, 0, 0deg) ;
+    }
+
+    50% {
+        -webkit-transform: translateZ(150px) scale(2.5) rotate3d(1, 1, 1, 180deg) ;
+        transform: translateZ(150px) scale(1.7) rotate3d(1, 1, 1, 180deg) ;
+    }
+
+    100% {
+        -webkit-transform: translateZ(110px) scale(1) rotate3d(1, 1, 1, 360deg) ;
+        transform: translateZ(110px) scale(1) rotate3d(1, 1, 1, 360deg) ;
+    }
+}
+
 
 a.btn-cv {
     text-decoration: none;
@@ -1354,7 +1417,7 @@ a.btn-cv:hover {
     -webkit-box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
     box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
 }
-
+/* 
 #anim-card-1 {
     -webkit-animation: wobble;
     animation: wobble;
@@ -1410,7 +1473,7 @@ a.btn-cv:hover {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
 }
-
+ */
 
 /* SECTION DES LANGAGES */
 
