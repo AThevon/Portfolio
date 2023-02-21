@@ -1223,7 +1223,7 @@ picture img.img-about {
 
 .seizure-bg {
     position: absolute;
-    top: 0;
+    top: -1px;
     object-fit: cover;
     transform: scaleX(-1);
 }
