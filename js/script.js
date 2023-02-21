@@ -47,6 +47,7 @@ logoDev.addEventListener('click', function () {
     movingCard.style['transition'] = "1s";
     logoDev.style['transition'] = ".8s";
     logoDevBg.style['transition'] = ".8s";
+    navBar.style.backgroundPositionY = "450%";
 
     // Mise en place de timers
     setTimeout(() => {
@@ -58,12 +59,12 @@ logoDev.addEventListener('click', function () {
         logoDevBg.style.height = "0";
         logoDevBg.style.width = "0";
     }, 1000);
-
+    
     setTimeout(() => {
         navBar.style['height'] = "8rem";
         document.body.style['overflow-y'] = 'auto';
     }, 1500);
-
+    
     setTimeout(() => {
         document.querySelector('.card-1').setAttribute('id', 'card-1')
         document.querySelector('.card-2').setAttribute('id', 'card-2')
