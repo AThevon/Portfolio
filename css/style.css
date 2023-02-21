@@ -776,8 +776,9 @@ img.logo-dev-onclick {
 }
 
 
-button.btn-nav {
+a.btn-nav {
     position: absolute;
+    text-decoration: none;
     right: 0;
     margin-right: 5rem;
     padding: 1.2rem 3.5rem;
@@ -803,7 +804,7 @@ button.btn-nav {
 
 }
 
-button.btn-nav:hover {
+a.btn-nav:hover {
     background-position: 100%;
     color: var(--black);
     -webkit-box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
