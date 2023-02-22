@@ -1,3 +1,50 @@
+//! CARDS HERO
+
+gsap.to(".card-out", {
+    scrollTrigger: {
+        trigger: '.hero',
+        start: "top bottom",
+        scrub: 1,
+    },
+    rotation: 0,
+    duration: 1,
+    x: -2000,
+    y: 600,
+});
+
+
+//! SWIPERS.JS 
+
+
+const swiper = new Swiper('.my-swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    effect: 'cube',
+    cubeEffect: {
+        slideShadows: true,
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        progressbarFillClass: 'swiper-pagination-progressbar-fill',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+});
+
+
 //* SETTING DU LANDING 
 if (window.innerWidth < 1025) {
     console.log('coucou');
@@ -108,50 +155,44 @@ function logoAnim(e) {
 
 }
 
+// // COULEUR DE L'ANIMATION D'EXP
+// const loader = document.querySelector('.loader');
+// const loaderSpan = loader.querySelectorAll('span');
 
-//! CARDS HERO
-
-gsap.to(".card-out", {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: "top bottom",
-        toggleActions: "restart pause reverse pause",
-        scrub: 1,
-    },
-    rotation: 0,
-    duration: 1,
-    x: -2000,
-    y: 600,
-});
+// loaderSpan.forEach((span, i) => {
+//     span.style.boxShadow = '0 5px 0 red, inset 0 5px 0 red';
+//     if (i % 2 === 0) {
+//         console.log(span);
+//         span.style.border = '10px solid orange';
+//     }
+// });
 
 
-//! SWIPERS.JS 
+const loader = document.querySelector('.loader');
+const loaderSpans = loader.querySelectorAll('span');
 
+const allColorsBoxShadow = ['rgb(150, 0, 0)', 'rgb(0, 53, 223)', 'rgb(255, 201, 0)', 'rgb(70, 0, 113)', '#e73c7e', 'rgb(255, 141, 109)'];
+const allColorsBorder = ['rgb(255, 144, 79)', 'rgb(0, 181, 255)', 'rgb(255, 237, 130)', 'rgb(122, 136, 255)', '#23a6d5', 'rgb(139, 185, 136)'];
 
-const swiper = new Swiper('.my-swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: false,
-    effect: 'cards',
-    cardsEffect: {
-        slideShadows: true,
-    },
+function updateColors(activeIndex) {
+    const increment = 15;
+    loaderSpans.forEach((span, i) => {
+        const colorBoxShadow = allColorsBoxShadow[activeIndex];
+        const colorBorder = allColorsBorder[activeIndex];
 
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        progressbarFillClass: 'swiper-pagination-progressbar-fill',
-    },
+        const rotate = `${(i - activeIndex) * increment}deg`;
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+        span.style.boxShadow = `0 5px 0 ${colorBoxShadow}, inset 0 5px 0 ${colorBoxShadow}`;
 
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
+        if (i % 2 === 0) {
+            span.style.border = `10px solid ${colorBorder}`;
+            span.style.transform = `rotateY(${rotate})`;
+        }
+    });
+}
+
+updateColors(swiper.realIndex);
+
+swiper.on('slideChange', () => {
+    updateColors(swiper.realIndex);
 });

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/helpers.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
     <link rel="shortcut icon" href="img/code-solid.svg" type="image/x-icon">
     <title>Adrien Thevon</title>
 </head>
@@ -40,7 +40,6 @@
     </header>
 
     <section class="hero">
-        <!-- <div class="bg-blur"></div> -->
         <div class="card-out"></div>
         <div class="main-hero">
             <div class="title-hero">
@@ -81,11 +80,12 @@
     
     <section class="exp">
         <img src="img/seizure-bg.svg" alt="" class="seizure-bg">
-        <!-- <div class="bg-blur"></div> -->
+        <img src="img/seizure-bottom-bg.svg" alt="" class="seizure-bottom-bg">
         <div class="main-exp">
             <h3 class="bg-title">expériences</h3>
             <ul class="main-card-exp">
-                <li class="card-exp " id="card-fcc" data-tilt data-tilt-max="30" data-tilt-speed="1700" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="1">
+                <li class="card-exp " id="card-fcc" data-tilt data-tilt-max="30" data-tilt-speed="1700"
+                    data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="1">
                     <figure class="logo-exp logo-fcc"></figure>
                     <h4 class="title-card-exp">freeCodeCamp.org</h4>
                     <p class="date-exp">2021 - 2022</p>
@@ -96,7 +96,8 @@
                         <li>Introduction au JavaScript</li>
                     </ul>
                 </li>
-                <li class="card-exp" id="card-cefim" data-tilt data-tilt-max="30" data-tilt-speed="1700" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="1">
+                <li class="card-exp" id="card-cefim" data-tilt data-tilt-max="30" data-tilt-speed="1700"
+                    data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="1">
                     <figure class="logo-exp logo-cefim"></figure>
                     <h4 class="title-card-exp">CEFIM</h4>
                     <p class="date-exp">2022 - 2023</p>
@@ -109,7 +110,8 @@
                         <li>Wordpress</li>
                     </ul>
                 </li>
-                <li class="card-exp" id="card-react" data-tilt data-tilt-max="30" data-tilt-speed="1700" data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="1">
+                <li class="card-exp" id="card-react" data-tilt data-tilt-max="30" data-tilt-speed="1700"
+                    data-tilt-perspective="1000" data-tilt-glare data-tilt-max-glare="1">
                     <figure class="logo-exp logo-react"></figure>
                     <h4 class="title-card-exp">Projet CEFIM</h4>
                     <p class="date-exp">2023</p>
@@ -125,65 +127,60 @@
 
     <section class="langages">
         <h3 class="bg-title">langages informatiques</h3>
-        <div class="swiper my-swiper lang-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide lang-card card-html">
-                    <img src="img/HTML5 icon.svg" alt="HTML">
-                    <div class="lang-card-text">
-                        <h4>HTML 5</h4>
-                        <div class="half-arc half-arc-html" style="--percentage:90%;">
-                            <span class="label">9</span>
-                        </div>
+        <div class="main-content-langages">
+            <div class="swiper my-swiper lang-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide lang-card card-html">
+                        <img src="img/HTML5 icon.svg" alt="HTML">
+                        <span>HTML</span>
+                    </div>
+                    <div class="swiper-slide lang-card card-css">
+                        <img src="img/css3 icon.svg" alt="CSS">
+                        <span>CSS</span>
+                    </div>
+                    <div class="swiper-slide lang-card card-js">
+                        <img src="img/javascript icon.svg" alt="JavaScript">
+                        <span>Javascript</span>
+
+                    </div>
+                    <div class="swiper-slide lang-card card-react">
+                        <img src="img/react-icon.svg" alt="React">
+                        <span>React.js</span>
+                    </div>
+                    <div class="swiper-slide lang-card card-sql">
+                        <img src="img/sql-5.svg" alt="SQL">
+                        <span>SQL</span>
+                    </div>
+                    <div class="swiper-slide lang-card card-node">
+                        <img src="img/node icon.svg" alt="Node">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="swiper-slide lang-card last-card">
+                        <p class="coming-soon">More coming soon..</p>
                     </div>
                 </div>
-                <div class="swiper-slide lang-card card-css">
-                    <img src="img/css3 icon.svg" alt="CSS">
-                    <div class="lang-card-text">
-                        <h4>CSS 3</h4>
-                        <div class="half-arc half-arc-css" style="--percentage:80%;">
-                            <span class="label">8</span>
-                        </div>
-                    </div>
+            </div>
+            <div class="main-desc-exp">
+                <div class="desc-exp">
+                    <p>Affinités</p>
+                    <span>WIP</span>
                 </div>
-                <div class="swiper-slide lang-card card-js">
-                    <img src="img/javascript icon.svg" alt="JavaScript">
-                    <div class="lang-card-text">
-                        <h4>JavaScript</h4>
-                        <div class="half-arc half-arc-js" style="--percentage:50%;">
-                            <span class="label">5</span>
-                        </div>
-                    </div>
-                
-                </div>
-                <div class="swiper-slide lang-card card-react">
-                    <img src="img/react-icon.svg" alt="React">
-                    <div class="lang-card-text">
-                        <h4>React</h4>
-                        <div class="half-arc half-arc-react" style="--percentage:20%;">
-                            <span class="label">2</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide lang-card card-sql">
-                    <img src="img/sql-5.svg" alt="SQL">
-                    <div class="lang-card-text">
-                        <h4>SQL</h4>
-                        <div class="half-arc half-arc-sql" style="--percentage:50%;">
-                            <span class="label">5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide lang-card card-node">
-                    <img src="img/node icon.svg" alt="Node">
-                    <div class="lang-card-text">
-                        <h4>Node.js</h4>
-                        <div class="half-arc half-arc-node" style="--percentage:10%;">
-                            <span class="label">1</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide lang-card last-card">
-                    <p class="coming-soon">More coming soon..</p>
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
