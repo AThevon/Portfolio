@@ -24,20 +24,17 @@ const swiper = new Swiper('.my-swiper', {
     cubeEffect: {
         slideShadows: true,
     },
-
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
         progressbarFillClass: 'swiper-pagination-progressbar-fill',
     },
-
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
     // And if we need scrollbar
     scrollbar: {
         el: '.swiper-scrollbar',
@@ -155,18 +152,6 @@ function logoAnim(e) {
 
 }
 
-// // COULEUR DE L'ANIMATION D'EXP
-// const loader = document.querySelector('.loader');
-// const loaderSpan = loader.querySelectorAll('span');
-
-// loaderSpan.forEach((span, i) => {
-//     span.style.boxShadow = '0 5px 0 red, inset 0 5px 0 red';
-//     if (i % 2 === 0) {
-//         console.log(span);
-//         span.style.border = '10px solid orange';
-//     }
-// });
-
 
 const loader = document.querySelector('.loader');
 const loaderSpans = loader.querySelectorAll('span');
@@ -175,18 +160,12 @@ const allColorsBoxShadow = ['rgb(150, 0, 0)', 'rgb(0, 53, 223)', 'rgb(255, 201, 
 const allColorsBorder = ['rgb(255, 144, 79)', 'rgb(0, 181, 255)', 'rgb(255, 237, 130)', 'rgb(122, 136, 255)', '#23a6d5', 'rgb(139, 185, 136)'];
 
 function updateColors(activeIndex) {
-    const increment = 15;
     loaderSpans.forEach((span, i) => {
         const colorBoxShadow = allColorsBoxShadow[activeIndex];
         const colorBorder = allColorsBorder[activeIndex];
-
-        const rotate = `${(i - activeIndex) * increment}deg`;
-
         span.style.boxShadow = `0 5px 0 ${colorBoxShadow}, inset 0 5px 0 ${colorBoxShadow}`;
-
         if (i % 2 === 0) {
-            span.style.border = `10px solid ${colorBorder}`;
-            span.style.transform = `rotateY(${rotate})`;
+            span.style.border = `8px solid ${colorBorder}`;
         }
     });
 }
@@ -196,3 +175,54 @@ updateColors(swiper.realIndex);
 swiper.on('slideChange', () => {
     updateColors(swiper.realIndex);
 });
+
+
+// SVG MORPHING
+// let tween0 = KUTE.to('#path0', // from shape
+//     { path: '#path1' }, // to shape
+//     { // options
+//         easing: 'easingCubicInOut',
+//         repeat: 0,
+//         duration: 2000,
+//     }
+// );
+
+// let tween1 = KUTE.to('#path1',
+//     { path: '#path2' }, // to shape
+//     { // options
+//         easing: 'easingCubicInOut',
+//         repeat: 0,
+//         duration: 2000,
+//     }
+// );
+
+// let tween2 = KUTE.to('#path2',
+//     { path: '#path3' }, // to shape
+//     { // options
+//         easing: 'easingCubicInOut',
+//         repeat: 0,
+//         duration: 2000,
+//     }
+// );
+// let tween3 = KUTE.to('#path3',
+//     { path: '#path0' }, // to shape
+//     { // option
+//         easing: 'easingCubicInOut',
+//         repeat: 0,
+//         duration: 2000,
+//     }
+// );
+
+// let allTweens = [tween0, tween1];
+
+// function updateTween(activeIndex) {
+//     const actualTween = allTweens[activeIndex];
+//     actualTween.start();
+// }
+
+// updateTween(swiper.realIndex);
+
+// swiper.on('slideChange', () => {
+//     updateTween(swiper.realIndex);
+// });
+

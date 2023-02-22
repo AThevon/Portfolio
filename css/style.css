@@ -1498,6 +1498,7 @@ a.btn-cv:hover {
 /* SECTION DES LANGAGES */
 
 section.langages {
+    position: relative;
     display: grid;
     height: 100vh;
 }
@@ -1512,6 +1513,12 @@ section.langages {
 .swiper {
     width: 35rem;
     height: 50rem;
+}
+.swiper-wrapper {
+    cursor: grab;
+}
+.swiper-wrapper:active  {
+    cursor: grabbing;
 }
 
 
@@ -1961,4 +1968,67 @@ img.card-node {
         margin-right: 0;
         margin-top: 10rem;
     }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 6rem;
+    height: 6rem;
+    background-color: #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 2rem;
+    background-color: var(--black);
+    transition: .2s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.35); 
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.35);
+    -webkit-animation: 'hover-outline' .2s linear forwards;
+    animation: 'hover-outline' .2s linear forwards;
+}
+
+@keyframes hover-outline {
+    0% {
+        outline: 0px solid var(--white);
+        scale: 1;
+    }
+    
+    50% {
+        outline: 5px solid var(--white);
+        scale: 1.1;
+    }
+    
+    100% {
+        outline: 2px solid var(--white);
+        scale: 1.05;
+    }
+}
+
+.swiper-button-next {
+    right: -14rem;
+}
+.swiper-button-prev {
+    left: -14rem;
+}
+
+.swiper-button-disabled {
+    display: none;
+}
+
+@media screen and (max-width: 52em) {
+    .swiper-button-prev,
+    .swiper-button-next {
+    display: none;
+}
+}
+
+#visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100vh;
 }
