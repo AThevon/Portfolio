@@ -402,7 +402,7 @@ body {
     font-size: 2rem;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 h3 {
@@ -1437,67 +1437,11 @@ a.btn-cv:hover {
     -webkit-box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
     box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
 }
-/* 
-#anim-card-1 {
-    -webkit-animation: wobble;
-    animation: wobble;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-2 {
-    -webkit-animation: swing;
-    animation: swing;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-3 {
-    -webkit-animation: tada;
-    animation: tada;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-4 {
-    -webkit-animation: jello;
-    animation: jello;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-5 {
-    -webkit-animation: shakeY;
-    animation: shakeY;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-6 {
-    -webkit-animation: bounce;
-    animation: bounce;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-7 {
-    -webkit-animation: rubberBand;
-    animation: rubberBand;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-#anim-card-8 {
-    -webkit-animation: heartBeat;
-    animation: heartBeat;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
- */
 
 /* SECTION DES LANGAGES */
 
 section.langages {
+    overflow: hidden;
     position: relative;
     display: grid;
     height: 100vh;
@@ -1686,16 +1630,6 @@ img.card-node {
     top: 16px;
     left: 16px;
 }
-/* 
-.half-arc span {
-    color: var(--white);
-    z-index: 3;
-    text-align: center;
-    margin-top: 3rem;
-    font-family: 'Alegreya', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 700;
-} */
 
 
 /*? RESPONSIVE */
@@ -1725,10 +1659,6 @@ img.card-node {
     .card-2 {
         opacity: 1;
     }
-
-    /* .card-1,
-    .card-2 {
-    } */
 
     h3.bg-title {
         margin: 0;
@@ -2025,10 +1955,83 @@ img.card-node {
 }
 }
 
-#visual {
+.bg-blob {
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.blob1 {
+    background-image: url('../img/blob1.svg');
+}
+
+.blob1-in {
+    -webkit-animation: slideInLeft;
+    animation: slideInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.blob1-out {
+    -webkit-animation: slideOutLeft;
+    animation: slideOutLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.blob2 {
+    background-image: url('../img/blob2.svg');
+}
+
+.blob2-in {
+    -webkit-animation: slideInDown;
+    animation: slideInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.blob2-out {
+    -webkit-animation: slideOutUp;
+    animation: slideOutUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.blob3 {
+    background-image: url('../img/blob3.svg');
+}
+
+.blob3-in {
+    -webkit-animation: lightSpeedInLeft;
+    animation: lightSpeedInLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.blob3-out {
+    -webkit-animation: lightSpeedOutLeft;
+    animation: lightSpeedOutLeft;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.blob4 {
+    background-image: url('../img/blob4.svg');
+}
+
+.blob4-in {
+    -webkit-animation: lightSpeedInRight;
+    animation: lightSpeedInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.blob4-out {
+    -webkit-animation: lightSpeedOutRight;
+    animation: lightSpeedOutRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
 }

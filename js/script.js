@@ -24,6 +24,7 @@ const swiper = new Swiper('.my-swiper', {
     cubeEffect: {
         slideShadows: true,
     },
+    allowTouchMove: false,
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
@@ -152,6 +153,7 @@ function logoAnim(e) {
 
 }
 
+// SETTING DE L'ANIM INFINITE COLORE
 
 const loader = document.querySelector('.loader');
 const loaderSpans = loader.querySelectorAll('span');
@@ -177,52 +179,34 @@ swiper.on('slideChange', () => {
 });
 
 
-// SVG MORPHING
-// let tween0 = KUTE.to('#path0', // from shape
-//     { path: '#path1' }, // to shape
-//     { // options
-//         easing: 'easingCubicInOut',
-//         repeat: 0,
-//         duration: 2000,
-//     }
-// );
+// SVG BG EXP
 
-// let tween1 = KUTE.to('#path1',
-//     { path: '#path2' }, // to shape
-//     { // options
-//         easing: 'easingCubicInOut',
-//         repeat: 0,
-//         duration: 2000,
-//     }
-// );
+const bgBlob = document.querySelector('.bg-blob');
+const blobs = ['blob1', 'blob2', 'blob3', 'blob4'];
+const blobsIn = ['blob1-in', 'blob2-in', 'blob3-in', 'blob4-in'];
+const blobsOut = ['blob1-out', 'blob2-out', 'blob3-out', 'blob4-out']
 
-// let tween2 = KUTE.to('#path2',
-//     { path: '#path3' }, // to shape
-//     { // options
-//         easing: 'easingCubicInOut',
-//         repeat: 0,
-//         duration: 2000,
-//     }
-// );
-// let tween3 = KUTE.to('#path3',
-//     { path: '#path0' }, // to shape
-//     { // option
-//         easing: 'easingCubicInOut',
-//         repeat: 0,
-//         duration: 2000,
-//     }
-// );
+function changeBlob(index) {
+    setTimeout(() => {
+        bgBlob.classList.remove(...blobsOut);
+        bgBlob.classList.remove(...blobs);
+    }, 600);
+    setTimeout(() => {
+        bgBlob.classList.add(blobs[index]);
+        bgBlob.classList.add(blobsIn[index]);
+    }, 800);
+}
 
-// let allTweens = [tween0, tween1];
+changeBlob(swiper.activeIndex);
 
-// function updateTween(activeIndex) {
-//     const actualTween = allTweens[activeIndex];
-//     actualTween.start();
-// }
+swiper.on('slidePrevTransitionStart', () => {
+    bgBlob.classList.remove(...blobsIn);
+    bgBlob.classList.add(blobsOut[swiper.realIndex+1]);
+        changeBlob(swiper.realIndex);
+});
 
-// updateTween(swiper.realIndex);
-
-// swiper.on('slideChange', () => {
-//     updateTween(swiper.realIndex);
-// });
-
+swiper.on('slideNextTransitionStart', () => {
+    bgBlob.classList.remove(...blobsIn);
+    bgBlob.classList.add(blobsOut[swiper.realIndex-1]);
+        changeBlob(swiper.realIndex);
+});
