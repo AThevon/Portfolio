@@ -40,12 +40,19 @@ const swiper = new Swiper('.my-swiper', {
     scrollbar: {
         el: '.swiper-scrollbar',
     },
+    // on: {
+    //     progress: function() {
+    //     let progressBar = document.querySelector('.swiper-loading-bar');
+    //       progressBar.style.width = 100 * this.progress + '%';
+        
+    //     },
+    // },
 });
 
 
 //* SETTING DU LANDING 
 if (window.innerWidth < 1025) {
-    console.log('coucou');
+    swiper.allowTouchMove = true;
     document.body.style.overflow = 'auto';
 }
 // Responsive header
@@ -158,8 +165,8 @@ function logoAnim(e) {
 const loader = document.querySelector('.loader');
 const loaderSpans = loader.querySelectorAll('span');
 
-const allColorsBoxShadow = ['rgb(150, 0, 0)', 'rgb(0, 53, 223)', 'rgb(255, 201, 0)', 'rgb(70, 0, 113)', '#e73c7e', 'rgb(255, 141, 109)'];
-const allColorsBorder = ['rgb(255, 144, 79)', 'rgb(0, 181, 255)', 'rgb(255, 237, 130)', 'rgb(122, 136, 255)', '#23a6d5', 'rgb(139, 185, 136)'];
+const allColorsBoxShadow = ['rgb(150, 0, 0)', 'rgb(0, 53, 223)', 'rgb(255, 201, 0)', 'rgb(70, 0, 113)', '#e73c7e', 'rgb(255, 141, 109)', '#232323'];
+const allColorsBorder = ['rgb(255, 144, 79)', 'rgb(0, 181, 255)', 'rgb(255, 237, 130)', 'rgb(122, 136, 255)', '#23a6d5', 'rgb(139, 185, 136)', '#232323'];
 
 function updateColors(activeIndex) {
     loaderSpans.forEach((span, i) => {
@@ -169,12 +176,18 @@ function updateColors(activeIndex) {
         if (i % 2 === 0) {
             span.style.border = `8px solid ${colorBorder}`;
         }
+        if (swiper.realIndex % 2 === 0) {
+            span.style.borderRadius = '0px';
+        } else {
+            span.style.borderRadius = '50%'
+        }
     });
 }
 
 updateColors(swiper.realIndex);
 
 swiper.on('slideChange', () => {
+    
     updateColors(swiper.realIndex);
 });
 
@@ -182,19 +195,17 @@ swiper.on('slideChange', () => {
 // SVG BG EXP
 
 const bgBlob = document.querySelector('.bg-blob');
-const blobs = ['blob1', 'blob2', 'blob3', 'blob4'];
-const blobsIn = ['blob1-in', 'blob2-in', 'blob3-in', 'blob4-in'];
-const blobsOut = ['blob1-out', 'blob2-out', 'blob3-out', 'blob4-out']
+const blobs = ['blob1', 'blob2', 'blob3', 'blob4', 'blob5', 'blob6'];
+const blobsIn = ['blob1-in', 'blob2-in', 'blob3-in', 'blob4-in', 'blob5-in', 'blob6-in'];
+const blobsOut = ['blob1-out', 'blob2-out', 'blob3-out', 'blob4-out', 'blob5-out', 'blob6-out']
 
 function changeBlob(index) {
     setTimeout(() => {
         bgBlob.classList.remove(...blobsOut);
         bgBlob.classList.remove(...blobs);
-    }, 600);
-    setTimeout(() => {
         bgBlob.classList.add(blobs[index]);
         bgBlob.classList.add(blobsIn[index]);
-    }, 800);
+    }, 400);
 }
 
 changeBlob(swiper.activeIndex);
