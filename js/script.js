@@ -1,8 +1,6 @@
 //! CARDS HERO
 
 
-
-
 //! SWIPERS.JS 
 
 
