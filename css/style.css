@@ -1726,6 +1726,12 @@ a.btn-cv:hover {
 /* SECTION DES LANGAGES */
 
 section.langages {
+    /* background-image: url(../img/bg-langages-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0; */
     overflow: hidden;
     position: relative;
     display: grid;

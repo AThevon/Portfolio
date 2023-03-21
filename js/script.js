@@ -239,3 +239,10 @@ gsap.to(".parallax", {
     y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
     ease: "none"
 });
+gsap.to(".parallax2", {
+    scrollTrigger: {
+    scrub: true
+    }, 
+    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    ease: "none"
+});
