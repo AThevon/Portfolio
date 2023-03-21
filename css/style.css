@@ -1040,6 +1040,7 @@ img.logo-dev-onclick {
 
 
 a.btn-nav {
+    opacity: 0;
     position: absolute;
     text-decoration: none;
     right: 0;
@@ -1051,7 +1052,6 @@ a.btn-nav {
     font-style: italic;
     font-size: 1.6rem;
     text-align: center;
-    opacity: 0;
     border-radius: 50px;
     color: var(--white);
     background-color: var(--beige);
@@ -1082,6 +1082,12 @@ a.btn-nav:hover {
     animation-duration: 1.4s;
 }
 
+.logo-nav-mail {
+    width: 3rem;
+    height: 3rem;
+    margin: 1.2rem;
+
+}
 
 /* SECTION HERO */
 
@@ -1425,7 +1431,6 @@ section.hero {
     transform: rotate(30deg);
     z-index: 3;
     background-color: var(--black);
-
 }
 
 /* SECTION ABOUT */
@@ -1486,6 +1491,44 @@ picture img.img-about {
     }
     .main-about {
         flex-direction: column;
+    }
+    .main-hero {
+        flex-direction: column;
+        gap: 3rem;
+        margin-inline: 0;
+    }
+    .job {
+        padding-left: 0;
+    }
+    .card {
+        display: none;
+    } 
+    .container-title {
+        justify-content: start;
+        padding-left: 6rem;
+    }
+    a.btn-nav {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 42em) {
+    picture img.img-about {
+        border-radius: 0;
+    }
+    section.about {
+        padding-block: 0;
+        padding-top: 4rem;
+    }
+    a.btn-nav {
+        margin-right: 2rem;
+        border-radius: 50%;
+        padding: 0;
+    }
+    .container-title {
+        scale: .8;
+        padding-left: 0;
+        margin-left: -2rem;
     }
 }
 /* SECTION EXPERIENCES */
@@ -1845,6 +1888,9 @@ img.card-node {
     .card-2 {
         opacity: 1;
     }
+    .title-hero h2 {
+        padding-left: 2rem;
+    }
 
     h3.bg-title {
         margin: 0;
@@ -1896,7 +1942,21 @@ img.card-node {
     .half-arc span {
         margin-bottom: 2rem;
     }
-    
+    .img-hero img {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 42em) {
+    section.hero {
+        height: 40vh;
+    }
+    .img-hero img {
+        display: none;
+    }
+    .main-hero {
+        max-width: 90vw;
+    }
 }
 
 /* SETTING DESC EXP */
@@ -2266,3 +2326,24 @@ img.card-node {
     background-color: blue;
     transition: width 0.3s ease-in-out;
 } */
+
+@media screen and (max-width: 64em) {
+    .main-content-langages {
+        margin-top: 4rem;
+    }
+    .main-desc-exp {
+        text-align: center;
+        margin-right: 0;
+        margin-top: 4rem;
+        
+    }
+    ul li.card-exp {
+        border-radius: 0;
+    }
+    #card-react {
+        margin-top: 4rem;
+    }
+    a.btn-cv {
+        margin-top: 4rem;
+    }
+}

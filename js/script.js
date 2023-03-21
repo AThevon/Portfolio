@@ -40,23 +40,43 @@ const swiper = new Swiper('.my-swiper', {
     scrollbar: {
         el: '.swiper-scrollbar',
     },
-    // on: {
-    //     progress: function() {
-    //     let progressBar = document.querySelector('.swiper-loading-bar');
-    //       progressBar.style.width = 100 * this.progress + '%';
+    on: {
+        progress: function() {
+        let progressBar = document.querySelector('.swiper-loading-bar');
+          progressBar.style.width = 100 * this.progress + '%';
         
-    //     },
-    // },
+        },
+    },
 });
 
 
 //* SETTING DU LANDING 
+const myH2 = document.querySelector('.title-h2');
+
 if (window.innerWidth < 1025) {
     swiper.allowTouchMove = true;
     document.body.style.overflow = 'auto';
+    myH2.textContent = '.portfolio';
+    const tiltCards = document.querySelectorAll('.card-exp');
+    tiltCards.forEach(card => {
+        card.removeAttribute('data-tilt', '');
+    });
 }
+
+const btnNav = document.querySelector('.btn-nav');
+
+if (window.innerWidth < 673) {
+    const logoMail = document.createElement('img');
+    logoMail.src = 'img/mail-icon.svg';
+    logoMail.alt = '';
+    logoMail.classList.add('logo-nav-mail');
+    btnNav.textContent = '';
+    btnNav.appendChild(logoMail);
+} else {
+    btnNav.textContent = 'me contacter';
+}
+
 // Responsive header
-const myH2 = document.querySelector('.title-h2');
 
 window.addEventListener('resize', () => {
     if (navBar.offsetHeight != window.innerHeight) {
@@ -138,7 +158,7 @@ logoDev.addEventListener('click', function () {
     }, 3800);
 
     setTimeout(() => {
-        document.querySelector('.btn-nav').style['opacity'] = '1';
+        btnNav.style['opacity'] = '1';
     }, 5000);
 
 })
@@ -152,11 +172,13 @@ document.querySelectorAll('.card-exp').forEach((el) => {
 })
 
 function logoAnim(e) {
+    if (window.innerWidth >= 1025) {
     const figure = e.currentTarget.querySelector('figure');
     figure.classList.add('figure-onclick');
     setTimeout( () => {
         figure.classList.remove('figure-onclick');
     }, 400);
+}
 
 }
 
