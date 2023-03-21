@@ -1,16 +1,6 @@
 //! CARDS HERO
 
-gsap.to(".card-out", {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: "top bottom",
-        scrub: 1,
-    },
-    rotation: 0,
-    duration: 1,
-    x: -2000,
-    y: 600,
-});
+
 
 
 //! SWIPERS.JS 
@@ -242,4 +232,12 @@ swiper.on('slideNextTransitionStart', () => {
     bgBlob.classList.remove(...blobsIn);
     bgBlob.classList.add(blobsOut[swiper.realIndex-1]);
         changeBlob(swiper.realIndex);
+});
+
+gsap.to(".parallax", {
+    scrollTrigger: {
+    scrub: true
+    }, 
+    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    ease: "none"
 });

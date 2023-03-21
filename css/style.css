@@ -1423,12 +1423,11 @@ section.hero {
 }
 
 .card-out {
-    width: 700rem;
-    height: 100rem;
+    width: 100vw;
+    height: 100%;
     position: absolute;
     top: 0;
-    left: 120rem;
-    transform: rotate(30deg);
+    left: 0;
     z-index: 3;
     background-color: var(--black);
 }
