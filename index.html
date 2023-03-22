@@ -41,13 +41,15 @@
         <div class="bg-menu"></div>
         <aside class="main-aside">
             <div class="logo-contact-aside">
-                <p class="contact-me">contact</p>
-                <img src="img/Circle-icons-dev.svg" alt="" class="contact-img">
+                <a href="index.html" class="main-contact-img">
+                    <img src="img/Circle-icons-dev.svg" alt="" class="contact-img" data-tilt data-tilt-glare
+                        data-tilt-max-glare="1" data-tilt-scale="1.2" data-tilt-max="40" data-tilt-speed="1400"
+                        data-tilt-perspective="1000">
+                </a>
             </div>
             <ul class="main-nav-menu">
                 <li class="mailto">
-                    <a href="mailto:adrienthevon@gmail.com"
-                        target="_blank">
+                    <a href="mailto:adrienthevon@gmail.com" target="_blank">
                         <img src="img/img-send-mail.svg" alt="Logo Linkedin">
                     </a>
                 </li>
@@ -57,8 +59,7 @@
                     </a>
                 </li>
                 <li class="linkedin">
-                    <a href="https://www.linkedin.com/in/adrien-thevon-74b134100/?originalSubdomain=fr"
-                        target="_blank">
+                    <a href="https://www.linkedin.com/in/adrien-thevon-74b134100/?originalSubdomain=fr" target="_blank">
                         <img src="img/linkedin-logo.svg" alt="Logo Linkedin">
                     </a>
                 </li>
@@ -67,7 +68,7 @@
     </header>
 
     <section class="hero parallax" data-speed=".35">
-        <div class="main-hero parallax2" data-speed=".1">
+        <div class="main-hero parallax" data-speed=".1">
             <div class="title-hero">
                 <div class="card beige-card card-1"></div>
                 <div class="card black-card card-2"></div>
@@ -104,7 +105,7 @@
             </picture>
         </div>
     </section>
-    
+
     <section class="exp">
         <img src="img/seizure-bg.svg" alt="" class="seizure-bg">
         <img src="img/seizure-bottom-bg.svg" alt="" class="seizure-bottom-bg">
@@ -156,9 +157,7 @@
         <div class="bg-blob">
         </div>
         <h3 class="bg-title">langages informatiques</h3>
-        <div class="title-loading">
-            <div class="swiper-loading-bar"></div>
-        </div>
+
         <div class="main-content-langages">
             <div class="swiper my-swiper lang-container">
                 <div class="swiper-wrapper">
@@ -191,30 +190,21 @@
                         <p class="coming-soon">à suivre..</p>
                     </div>
                 </div>
-                <img src="img/arrow-right-solid.svg" alt="HTML" class="swiper-button-next">
-                <img src="img/arrow-left-solid.svg" alt="HTML" class="swiper-button-prev">
             </div>
-            <div class="main-desc-exp">
-                <div class="desc-exp">
-                    <p>Affinités</p>
-                    <span><i>Work in progress</i></span>
-                </div>
-                <div class="loader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+            <div class="main-button-prev">
+                <img src="img/arrow-left-solid.svg" alt="" class="btn-prev">
+            </div>
+            <div class="main-button-next">
+                <img src="img/arrow-right-solid.svg" alt="" class="btn-next">
+            </div>
+
+            <!-- <div class="main-affinity-note">
+                <p class="affinity-text">8/10</p>
+            </div> -->
+            <div class="progress-exp">
+                <div class="main-load-bar">
+                    <div class="load-bar"></div>
                 </div>
             </div>
         </div>
@@ -238,35 +228,6 @@
         </div>
     </section>
 
-    <footer class="contact">
-        <button class="btn-footer">me contacter</button>
-        <div class="bg-card-contact">
-            <div class="card-contact">
-                <figure class="cross"></figure>
-                <h4></h4>
-                <div class="main-text-contact">
-                    <ul class="text-contact">
-                        <li class="icon-name"></li>
-                        <li>Nom</li>
-                        <li>Adrien Thevon</li>
-                    </ul>
-                    <ul class="text-contact">
-                        <li class="icon-mail"></li>
-                        <li>Email</li>
-                        <li>adrienthevon@gmail.com</li>
-                    </ul>
-                    <ul class="text-contact">
-                        <li class="icon-phone"></li>
-                        <li>Téléphone</li>
-                        <li>07.61.23.84.49</li>
-                    </ul>
-                </div>
-                <hr>
-                <figure class="logo-linkedin"></figure>
-            </div>
-        </div>
-    </footer> -->
-
     <!-- ALL SCRIPTS NEEDED -->
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -285,15 +246,15 @@
     <!-- SWIPER.JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    <!-- KUTE.JS -->
-    <script src="https://cdn.jsdelivr.net/npm/kute.js/dist/kute.min.js"></script>
 
-    
+    <!-- ANIMATE.JS -->
+    <script src="js/anime.min.js"></script>
+
     <!-- MY SCRIPT -->
     <script src="js/script.js"></script>
     <!-- VANILLA TILT -->
     <script src="js\vanilla-tilt.js"></script>
-    
+
 </body>
 
 </html>

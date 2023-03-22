@@ -14,26 +14,66 @@ const swiper = new Swiper('.my-swiper', {
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
-        progressbarFillClass: 'swiper-pagination-progressbar-fill',
-    },
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
     },
     // And if we need scrollbar
     scrollbar: {
         el: '.swiper-scrollbar',
     },
-    on: {
-        progress: function() {
-        let progressBar = document.querySelector('.swiper-loading-bar');
-          progressBar.style.width = 100 * this.progress + '%';
-        
-        },
-    },
 });
 
+
+// PARALLAX GSAP
+
+gsap.to(".parallax", {
+    scrollTrigger: {
+    scrub: true
+    }, 
+    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    ease: "none"
+});
+
+
+// SETTING DES ARROW NAV SWIPER HOMEMADE
+const prevBtn = document.querySelector('.main-button-prev');
+const nextBtn = document.querySelector('.main-button-next');
+
+prevBtn.style.transform = 'translateX(-100%)';
+
+
+function detectPagination() {
+    if (swiper.realIndex != 0) {
+        prevBtn.style.display = 'block';
+        setTimeout(() => {
+            prevBtn.style.transform = 'translateX(0)';
+        }, 400);
+    } else {
+        prevBtn.style.transform = 'translateX(-100%)';
+        setTimeout(() => {
+            prevBtn.style.display = 'none';
+        }, 400);
+    } 
+    if (swiper.realIndex === swiper.slides.length - 1) {
+        nextBtn.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            nextBtn.style.display = 'none';
+        }, 400);
+    } else {
+        nextBtn.style.display = 'block';
+        setTimeout(() => {
+            nextBtn.style.transform = 'translateX(0)';
+        }, 400);
+    }
+}
+
+prevBtn.addEventListener('click', () => {
+    swiper.slidePrev();
+    detectPagination();
+});
+
+nextBtn.addEventListener('click', () => {
+    swiper.slideNext();
+    detectPagination();
+});
 
 //* SETTING DU LANDING 
 const myH2 = document.querySelector('.title-h2');
@@ -159,7 +199,7 @@ responsiveMobile();
 
 window.addEventListener('resize', () => {
     if (navBar.offsetHeight != window.innerHeight) {
-        document.body.style.overflow = 'auto';
+        document.body.style.overflowY = 'auto';
         myH2.textContent = '.portfolio';
     }
     else {
@@ -263,36 +303,54 @@ function logoAnim(e) {
 
 }
 
-// SETTING DE L'ANIM INFINITE COLORE
 
-const loader = document.querySelector('.loader');
-const loaderSpans = loader.querySelectorAll('span');
+const loadBar = document.querySelector('.load-bar');
 
-const allColorsBoxShadow = ['rgb(150, 0, 0)', 'rgb(0, 53, 223)', 'rgb(255, 201, 0)', 'rgb(70, 0, 113)', '#e73c7e', 'rgb(255, 141, 109)', '#232323'];
-const allColorsBorder = ['rgb(255, 144, 79)', 'rgb(0, 181, 255)', 'rgb(255, 237, 130)', 'rgb(122, 136, 255)', '#23a6d5', 'rgb(139, 185, 136)', '#232323'];
+const allGradient = [
+    /*HTML*/ 'linear-gradient(50deg, rgb(255, 226, 78) 0%, rgb(255, 144, 79) 50%, rgb(150, 0, 0) 100%)', 
+    /*CSS*/ 'linear-gradient(50deg, rgb(0, 255, 194) 0%, rgb(0, 181, 255) 50%, rgb(0, 53, 223) 100%)', 
+    /*JS*/ 'linear-gradient(50deg, rgb(255, 237, 130) 0%, rgb(255, 201, 0) 100%)', 
+    /*REACT*/ 'linear-gradient(50deg, rgb(0, 181, 255) 0%, rgb(154, 224, 255) 3%, rgb(122, 136, 255) 50%, rgb(70, 0, 113) 100%)', 
+    /*SQL*/ 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)', 
+    /*NODEJS*/ 'linear-gradient(50deg, rgb(255, 141, 109) 0%, rgb(139, 185, 136) 48%, rgb(37, 61, 75) 100%)', 
+    /*à suivre*/ '#232323'];
+
+const allAffinity = [
+    /*HTML*/ '80%', 
+    /*CSS*/ '90%', 
+    /*JS*/ '60%', 
+    /*REACT*/ '30%', 
+    /*SQL*/ '50%', 
+    /*NODEJS*/ '30%', 
+    /*à suivre*/ '120%'];
+
 
 function updateColors(activeIndex) {
-    loaderSpans.forEach((span, i) => {
-        const colorBoxShadow = allColorsBoxShadow[activeIndex];
-        const colorBorder = allColorsBorder[activeIndex];
-        span.style.boxShadow = `0 5px 0 ${colorBoxShadow}, inset 0 5px 0 ${colorBoxShadow}`;
-        if (i % 2 === 0) {
-            span.style.border = `8px solid ${colorBorder}`;
-        }
-        if (swiper.realIndex % 2 === 0) {
-            span.style.borderRadius = '0px';
-        } else {
-            span.style.borderRadius = '50%'
-        }
-    });
-}
+        // pour la progressbar
+        const colorGradient = allGradient[activeIndex];
+        const affinity = allAffinity[activeIndex];
+
+        const tweenConfig = {
+            height: `${affinity}`,
+            ease: Elastic.easeOut.config(.6, .3),
+            duration: 1.6,
+        };
+        
+        TweenMax.to(loadBar, tweenConfig);
+
+        setTimeout(() => {
+            loadBar.style.background = colorGradient;
+        }, 100);
+    };
+
 
 updateColors(swiper.realIndex);
 
 swiper.on('slideChange', () => {
-    
     updateColors(swiper.realIndex);
 });
+
+
 
 
 // SVG BG EXP
@@ -326,19 +384,4 @@ swiper.on('slideNextTransitionStart', () => {
 });
 
 
-// PARALLAX GSAP
 
-gsap.to(".parallax", {
-    scrollTrigger: {
-    scrub: true
-    }, 
-    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-    ease: "none"
-});
-gsap.to(".parallax2", {
-    scrollTrigger: {
-    scrub: true
-    }, 
-    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-    ease: "none"
-});
