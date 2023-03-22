@@ -656,6 +656,7 @@ body {
     font-weight: 400;
     font-size: 2rem;
     scroll-behavior: smooth;
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 
@@ -1037,8 +1038,8 @@ img.logo-dev-onclick {
     transition: .8s;
 }
 
-
-a.btn-nav {
+button.btn-nav {
+    z-index: 1100;
     opacity: 0;
     position: absolute;
     text-decoration: none;
@@ -1066,7 +1067,7 @@ a.btn-nav {
 
 }
 
-a.btn-nav:hover {
+button.btn-nav:hover {
     background-position: 100%;
     color: var(--black);
     -webkit-box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
@@ -1087,6 +1088,146 @@ a.btn-nav:hover {
     margin: 1.2rem;
 
 }
+
+/* SETTING DE L'ASIDE */
+.bg-menu {
+    opacity: 0;
+    z-index: -999;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: .5s;
+}
+
+.bg-menu-active {
+    opacity: 1;
+    z-index: 999;
+}
+
+.main-aside {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: -25%;
+    z-index: 1000;
+    background-color: var(--beige);
+    width: 100rem;
+    height: 94rem;
+    border-radius: 2rem;
+    display: flex;
+    gap: 7rem;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    -webkit-box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
+    padding-left: 7rem;
+}
+
+.logo-contact-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+p.contact-me {
+    text-align: center;
+    font-family: var(--third-font);
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 4rem;
+}
+
+img.contact-img {
+    object-fit: cover;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin-left: 4rem;
+}
+
+.btn-menu-close {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+    transition: .8s;
+}
+
+ul.main-nav-menu {
+    display: grid;
+    grid-row: repeat(3, 1fr);
+    gap: 5rem;
+    margin-bottom: 7rem;
+}
+
+ul.main-nav-menu li a img {
+    width: 20rem;
+    object-fit: cover;
+    transition: .3s;
+}
+
+ul.main-nav-menu li:hover a img {
+    transform: translateX(35px);
+    scale: 1.05;
+}
+
+.mailto a img {
+    border-radius: 7px;
+    outline: 1px solid var(--black);
+}
+
+.github a img {
+    background-color: var(--white);
+    border-radius: 7px;
+    padding: 12px 10px;
+}
+
+ul.main-nav-menu li {
+    position: relative;
+}
+
+
+ul.main-nav-menu li::before {
+    content: '';
+    scale: 0;
+    width: 12rem;
+    height: 12rem;
+    transform: rotate(-25deg);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: .3s;
+    padding: .5rem;
+}
+
+ul.main-nav-menu li:hover::before {
+    scale: 1;
+}
+
+.mailto::before {
+    left: -15%;
+    top: -75%;
+    background-image: url(../img/gmail-icon.svg);
+}
+
+.github::before {
+    left: -20%;
+    top: -75%;
+    background-image: url(../img/octocat.svg);
+}
+
+.linkedin::before {
+    left: -20%;
+    top: -75%;
+    background-image: url(../img/suitcase-icon.svg);
+}
+
 
 /* SECTION HERO */
 
@@ -1493,7 +1634,7 @@ picture img.img-about {
         justify-content: start;
         padding-left: 6rem;
     }
-    a.btn-nav {
+    button.btn-nav {
         opacity: 1;
     }
 }
@@ -1506,7 +1647,7 @@ picture img.img-about {
         padding-block: 0;
         padding-top: 4rem;
     }
-    a.btn-nav {
+    button.btn-nav {
         margin-right: 2rem;
         border-radius: 50%;
         padding: 0;
@@ -1642,6 +1783,8 @@ li.card-exp figure {
 }
 
 li.card-exp h4 {
+    font-family: var(--third-font);
+    font-weight: 600;
     transform: translateZ(130px);
 }
 
@@ -1703,9 +1846,9 @@ a.btn-cv {
     background-color: var(--beige);
     padding: 1.5rem 7rem;
     place-self: center;
-    margin-top: 10rem;
+    margin-top: 6rem;
     font-weight: 700;
-    border: 3px solid var(--black);
+    outline: 3px solid var(--black);
     background-image: -webkit-linear-gradient(30deg, var(--black) 50%, transparent 50%);
     background-image: linear-gradient(30deg, var(--black) 50%, transparent 50%);
     background-size: 500px;
@@ -1721,6 +1864,7 @@ a.btn-cv:hover {
     color: var(--black);
     -webkit-box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
     box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.4);
+    outline: 3px solid var(--beige);
 }
 
 /* SECTION DES LANGAGES */

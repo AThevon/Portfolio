@@ -1,6 +1,3 @@
-//! CARDS HERO
-
-
 //! SWIPERS.JS 
 
 
@@ -40,29 +37,121 @@ const swiper = new Swiper('.my-swiper', {
 
 //* SETTING DU LANDING 
 const myH2 = document.querySelector('.title-h2');
-
-if (window.innerWidth < 1025) {
-    swiper.allowTouchMove = true;
-    document.body.style.overflow = 'auto';
-    myH2.textContent = '.portfolio';
-    const tiltCards = document.querySelectorAll('.card-exp');
-    tiltCards.forEach(card => {
-        card.removeAttribute('data-tilt', '');
-    });
+function responsiveMode() {
+    if (window.innerWidth < 1025) {
+        swiper.allowTouchMove = true;
+        document.body.style.overflow = 'auto';
+        myH2.textContent = '.portfolio';
+        const tiltCards = document.querySelectorAll('.card-exp');
+        tiltCards.forEach(card => {
+            card.removeAttribute('data-tilt', '');
+        });
+    }
 }
 
-const btnNav = document.querySelector('.btn-nav');
+responsiveMode();
 
+// GSAP - MENU CONTACT
+const btnNav = document.querySelector('.btn-nav');
+const bgMenu = document.querySelector('.bg-menu');
+const aside = document.querySelector('.main-aside');
+
+gsap.to(aside, {
+    y: -1000,
+    x: 1000,
+});
+
+TweenMax.to(aside, 1, {
+    opacity: 1,
+    delay: 1
+});
+
+const logoCross = document.createElement('img');
+logoCross.src = 'img/cross-icon.svg';
+logoCross.alt = '';
+
+function openCloseMenu() {
+    if (!logoCross.classList.contains('btn-menu-close')) {
+        document.body.style.overflowY = 'hidden';
+        logoCross.style.transform = 'rotate(0deg)';
+        logoCross.style.scale = '1';
+        bgMenu.classList.add('bg-menu-active');
+        btnNav.style.marginRight = '2.5rem';
+        logoCross.classList.add('btn-menu-close');
+        btnNav.style.padding = '1.2rem';
+        btnNav.textContent = '';
+        btnNav.appendChild(logoCross);
+
+        gsap.to(aside, {
+            y: 0,
+            duration: .6, 
+            ease: 'circ',
+        })
+        gsap.to(aside, {
+            x: 650,
+            duration: .6,
+            delay: .2,
+        })
+
+    } else {
+
+        document.body.style.overflowY = 'auto';
+        logoCross.style.transform = 'rotate(720deg)';
+        logoCross.style.scale = '0';
+        
+        gsap.to(aside, {
+            x: 600,
+            duration: .3,
+            ease: 'sine',
+            onComplete: () => {
+                gsap.to(aside, {
+                    x: 1000,
+                    duration: .4,
+                    ease: 'sine',
+                    onComplete: () => {
+                        gsap.to(aside, {
+                            y: -1000,
+                        })
+                    },
+                })
+            }
+        })
+        
+        bgMenu.classList.remove('bg-menu-active');
+        setTimeout(() => {
+            logoCross.classList.remove('btn-menu-close');
+            btnNav.removeChild(logoCross);
+            if (window.innerWidth < 673) {
+                responsiveMobile();
+                btnNav.style.padding = '0';
+            } else  {
+                btnNav.style.marginRight = '5rem';
+                btnNav.style.padding = '1.2rem 3.5rem';
+                btnNav.textContent = 'me contacter';
+            }
+        }, 550);
+    }
+}
+
+
+btnNav.addEventListener('click', openCloseMenu);
+bgMenu.addEventListener('click', openCloseMenu);
+
+// Responsive mobile
+function responsiveMobile() {
 if (window.innerWidth < 673) {
-    const logoMail = document.createElement('img');
-    logoMail.src = 'img/mail-icon.svg';
-    logoMail.alt = '';
-    logoMail.classList.add('logo-nav-mail');
+    const logoBurger = document.createElement('img');
+    logoBurger.src = 'img/burger-icon.svg';
+    logoBurger.alt = '';
+    logoBurger.classList.add('logo-nav-mail');
     btnNav.textContent = '';
-    btnNav.appendChild(logoMail);
+    btnNav.appendChild(logoBurger);
 } else {
     btnNav.textContent = 'me contacter';
 }
+}
+
+responsiveMobile();
 
 // Responsive header
 
@@ -75,6 +164,8 @@ window.addEventListener('resize', () => {
         document.body.style.overflow = 'hidden';
         myH2.textContent = 'adrien.thevon'
     }
+    responsiveMode();
+    responsiveMobile();
 });
 
 // effet 3d de la card
@@ -231,6 +322,9 @@ swiper.on('slideNextTransitionStart', () => {
     bgBlob.classList.add(blobsOut[swiper.realIndex-1]);
         changeBlob(swiper.realIndex);
 });
+
+
+// PARALLAX GSAP
 
 gsap.to(".parallax", {
     scrollTrigger: {
