@@ -84,6 +84,7 @@ function openCloseMenu() {
 
         gsap.to(aside, {
             y: 0,
+            rotation: 2,
             duration: .6, 
             ease: 'circ',
         })
@@ -105,12 +106,13 @@ function openCloseMenu() {
             ease: 'sine',
             onComplete: () => {
                 gsap.to(aside, {
-                    x: 1000,
+                    x: 1100,
                     duration: .4,
                     ease: 'sine',
                     onComplete: () => {
                         gsap.to(aside, {
                             y: -1000,
+                            rotation: 0,
                         })
                     },
                 })
@@ -129,7 +131,7 @@ function openCloseMenu() {
                 btnNav.style.padding = '1.2rem 3.5rem';
                 btnNav.textContent = 'me contacter';
             }
-        }, 550);
+        }, 450);
     }
 }
 

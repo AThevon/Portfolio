@@ -1111,7 +1111,7 @@ button.btn-nav:hover {
     opacity: 0;
     position: absolute;
     right: 0;
-    top: -25%;
+    top: -20%;
     z-index: 1000;
     background-color: var(--beige);
     width: 100rem;
