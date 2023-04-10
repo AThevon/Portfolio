@@ -129,7 +129,7 @@ function openCloseMenu() {
             ease: 'circ',
         })
         gsap.to(aside, {
-            x: 650,
+            x: 0,
             duration: .6,
             delay: .2,
         })
@@ -141,17 +141,17 @@ function openCloseMenu() {
         logoCross.style.scale = '0';
         
         gsap.to(aside, {
-            x: 600,
+            x: -50,
             duration: .3,
             ease: 'sine',
             onComplete: () => {
                 gsap.to(aside, {
-                    x: 1100,
+                    x: 400,
                     duration: .4,
                     ease: 'sine',
                     onComplete: () => {
                         gsap.to(aside, {
-                            y: -1000,
+                            y: -500,
                             rotation: 0,
                         })
                     },
@@ -313,15 +313,17 @@ const allGradient = [
     /*REACT*/ 'linear-gradient(50deg, rgb(0, 181, 255) 0%, rgb(154, 224, 255) 3%, rgb(122, 136, 255) 50%, rgb(70, 0, 113) 100%)', 
     /*SQL*/ 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)', 
     /*NODEJS*/ 'linear-gradient(50deg, rgb(255, 141, 109) 0%, rgb(139, 185, 136) 48%, rgb(37, 61, 75) 100%)', 
+    /*MONGODB*/ 'linear-gradient(50deg, rgb(194, 191, 191) 0%, rgb(108, 172, 72) 48%, rgb(89, 150, 54) 100%)', 
     /*à suivre*/ '#232323'];
 
 const allAffinity = [
     /*HTML*/ '80%', 
     /*CSS*/ '90%', 
-    /*JS*/ '60%', 
-    /*REACT*/ '30%', 
-    /*SQL*/ '50%', 
-    /*NODEJS*/ '30%', 
+    /*JS*/ '80%', 
+    /*REACT*/ '70%', 
+    /*SQL*/ '40%', 
+    /*NODEJS*/ '60%', 
+    /*MONGODB*/ '50%', 
     /*à suivre*/ '120%'];
 
 
@@ -356,9 +358,9 @@ swiper.on('slideChange', () => {
 // SVG BG EXP
 
 const bgBlob = document.querySelector('.bg-blob');
-const blobs = ['blob1', 'blob2', 'blob3', 'blob4', 'blob5', 'blob6'];
-const blobsIn = ['blob1-in', 'blob2-in', 'blob3-in', 'blob4-in', 'blob5-in', 'blob6-in'];
-const blobsOut = ['blob1-out', 'blob2-out', 'blob3-out', 'blob4-out', 'blob5-out', 'blob6-out']
+const blobs = ['blob1', 'blob2', 'blob3', 'blob4', 'blob5', 'blob6', 'blob7'];
+const blobsIn = ['blob1-in', 'blob2-in', 'blob3-in', 'blob4-in', 'blob5-in', 'blob6-in', 'blob7-in'];
+const blobsOut = ['blob1-out', 'blob2-out', 'blob3-out', 'blob4-out', 'blob5-out', 'blob6-out', 'blob7-out']
 
 function changeBlob(index) {
     setTimeout(() => {
@@ -384,4 +386,8 @@ swiper.on('slideNextTransitionStart', () => {
 });
 
 
+loadBar.addEventListener('click', () => {
+    const typeEffect = document.querySelector('.type-effect');
+    typeEffect.classList.remove('type-effect-1');
+})
 
